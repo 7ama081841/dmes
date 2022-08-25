@@ -10,8 +10,8 @@ export default function Home() {
                         <h1>dmes</h1>
 
                         <div className="buttons">
-                            <button></button>
-                            <button></button>
+                            <button>sign in</button>
+                            <button>sign up</button>
                         </div>
                     </div>
                 </div>

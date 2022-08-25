@@ -1,32 +1,23 @@
-.home {
+.sin-up-sin-in {
     height: 100vh;
     background: url("https://www.toomed.com/blog/wp-content/uploads/2019/03/etudiant-sante-medecine.jpg")
         no-repeat center;
     background-size: cover;
 }
 
-.overlay {
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.home h1 {
-    text-transform: uppercase;
+.doctor,
+.patient {
+    text-align: center;
     color: #fff;
-    font-size: 80px;
+    font-size: 27px;
+    padding: 150px;
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.doctor {
+    border-right: solid 1px #fff;
 }
 
-.buttons button {
+button {
     cursor: pointer;
     font-size: 20px;
     padding: 5px 10px;
@@ -39,7 +30,7 @@
     height: 30px;
 }
 
-.buttons button:hover {
+button:hover {
     background: rgb(114, 114, 248);
     color: #fff;
 }
