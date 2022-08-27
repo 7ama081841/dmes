@@ -17,20 +17,27 @@
     border-right: solid 1px #fff;
 }
 
-button {
+.sin-up-sin-in h2 {
+    margin-bottom: 30px;
+}
+
+.sin-up-sin-in a {
     cursor: pointer;
     font-size: 20px;
     padding: 5px 10px;
     margin: 50px;
     border-radius: 18px;
-    border: none;
-    outline: none;
+    text-decoration: none;
+    color: black;
+    background: #fff;
+    text-decoration: none;
     transition: 0.5s ease-in-out;
     width: 100px;
     height: 30px;
+    margin-top: 30px;
 }
 
-button:hover {
+.sin-up-sin-in a:hover {
     background: rgb(114, 114, 248);
     color: #fff;
 }

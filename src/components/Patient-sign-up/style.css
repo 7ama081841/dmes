@@ -1,0 +1,13 @@
+.Patient-sign-up {
+    height: 100vh;
+    background: url("https://www.toomed.com/blog/wp-content/uploads/2019/03/etudiant-sante-medecine.jpg")
+        no-repeat center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Patient-sign-up .show-password {
+    top: 390px;
+}

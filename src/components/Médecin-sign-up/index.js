@@ -2,8 +2,8 @@ import React from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
 
-export default function Regester() {
-    const toggleEye = () => {
+export default function MédecinSignUp() {
+    const handleEye = () => {
         const password = document.querySelector(".password");
         const eye = document.querySelector("i");
 
@@ -19,30 +19,39 @@ export default function Regester() {
     };
 
     return (
-        <div className="regester">
+        <div className="Médecin-sign-up">
             <form>
                 <div className="parent">
-                    <h2>Log in</h2>
-                    <input type="text" placeholder="Username" />
+                    <h2>Sign up Médecin</h2>
+
+                    <input type="text" placeholder="nom" />
+
+                    <input type="text" placeholder="prénom" />
+
+                    <input type="text" placeholder="adresse cabinet" />
+
+                    <input type="text" placeholder="téléphone" />
+
+                    <input type="text" placeholder="spécialité" />
+
+                    <input type="text" placeholder="nom hôpital" />
+
                     <input
                         type="password"
                         placeholder="password"
                         className="password"
                     />
 
-                    <div className="show-password" onClick={toggleEye}>
+                    <div className="show-password" onClick={handleEye}>
                         <i className="fa fa-eye" aria-hidden="true"></i>
                     </div>
 
                     <div>
-                        <input type="checkbox" id="remmember" />
-                        <label htmlFor="remmember">remember me</label>
+                        <Link to="/">you have an account ? Log in;</Link>
                     </div>
 
-                    <div>
-                        <Link to="/SinUpSinIn">create new account</Link>
-                    </div>
                 </div>
+
             </form>
         </div>
     );
