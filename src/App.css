@@ -1,3 +1,13 @@
 h1 {
   margin: 0;
 }
+
+.show-password {
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    background: #fff;
+    color: black;
+    position: absolute;
+    right: 28px;
+}

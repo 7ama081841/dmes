@@ -47,11 +47,9 @@ export default function MédecinSignUp() {
                     </div>
 
                     <div>
-                        <Link to="/">you have an account ? Log in;</Link>
+                        <Link to="/Regester">you have an account ? Log in</Link>
                     </div>
-
                 </div>
-
             </form>
         </div>
     );

@@ -8,10 +8,20 @@
     align-items: center;
 }
 
+.Médecin-sign-up input[type="password"]{
+    margin-bottom: 20px;
+}
+
 .Médecin-sign-up .show-password {
     top: 437px;
+    right: 28px;
 }
 
 .Médecin-sign-up form {
     padding: 50px 0;
+}
+
+
+.Médecin-sign-up h2 , input {
+    margin-bottom: 20px;
 }

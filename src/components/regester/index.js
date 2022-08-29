@@ -39,6 +39,12 @@ export default function Regester() {
                         <label htmlFor="remmember">remember me</label>
                     </div>
 
+                    <div className="button" >
+                        <Link to="/PatientProfile" className="btn">
+                            Log In{" "}
+                        </Link>
+                    </div>
+
                     <div>
                         <Link to="/SinUpSinIn">create new account</Link>
                     </div>

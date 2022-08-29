@@ -1,0 +1,115 @@
+import React, { useState } from "react";
+import "./style.css";
+import { doctors } from "../../api";
+import { patient } from "../../api";
+import { Link } from "react-router-dom";
+
+export default function PatientProfile() {
+    const [doc, setDoc] = useState("");
+    const [pati, setPati] = useState("");
+
+    console.log(doc);
+
+    return (
+        <div className="patient-profile">
+            <div className="nav">
+                <ul>
+                    <li>profile</li>
+                    <li>
+                        {" "}
+                        <Link to="/">Deconnect</Link>
+                    </li>
+                </ul>
+            </div>
+            <div className="demande-section">
+                <div>
+                    <div>
+                        <p>demande d'ajout</p>
+                        <p>helmi fakhfékh</p>
+                        <p>123-258-260</p>
+                    </div>
+                    <div>
+                        <button className="refuse">réfuse</button>
+                        <button className="accepte">accepte</button>
+                    </div>
+                </div>
+                <hr />
+                <div>
+                    <div>
+                        <p>demande de consultation</p>
+                        <p>zouhair bouchleka</p>
+                        <p>800-230-410</p>
+                    </div>
+                    <div>
+                        <button className="refuse">réfuse</button>
+                        <button className="accepte">accepte</button>
+                    </div>
+                </div>
+            </div>
+            <div className="doctor-section">
+                <div className="search-parent">
+                    <p> List des doctors </p>
+                    <input
+                        type="text"
+                        placeholder="search"
+                        onChange={(e) => setDoc(e.target.value)}
+                    />
+                    <i className="fa fa-search" aria-hidden="true"></i>
+                </div>
+                <div className="doctors-names">
+                    <ul>
+                        <div className="titre">
+                            <p>Nom De Doctor</p>
+                            <p>Adresse</p>
+                            <p>numéro de téléphone</p>
+                        </div>
+                        {doctors
+                            .filter((doctor) =>
+                                doctor.first_name.toLowerCase().includes(doc)
+                            )
+                            .map((doctor, key) => (
+                                <div>
+                                    <div className="" key={key}>
+                                        <p>{doctor.first_name}</p>
+                                        <p>{doctor.adress}</p>
+                                        <p>{doctor.tel}</p>
+                                    </div>
+                                </div>
+                            ))}
+                    </ul>
+                </div>
+            </div>
+            <div className="patient-section">
+                <div className="search-parent">
+                    <p> List des patients </p>
+                    <input
+                        type="text"
+                        placeholder="search"
+                        onChange={(e) => setPati(e.target.value)}
+                    />
+                    <i className="fa fa-search" aria-hidden="true"></i>
+                </div>
+                <div className="patients-names">
+                    <ul>
+                        <div className="titre">
+                            <p>Nom De patient</p>
+                            <p>Adresse</p>
+                            <p>numéro de téléphone</p>
+                        </div>
+                        {patient
+                            .filter((patient) =>
+                                patient.first_name.toLowerCase().includes(pati)
+                            )
+                            .map((patient, key) => (
+                                <li key={key}>
+                                    <p>{patient.first_name}</p>
+                                    <p>{patient.adress}</p>
+                                    <p>{patient.tel}</p>
+                                </li>
+                            ))}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    );
+}

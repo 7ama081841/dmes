@@ -11,3 +11,11 @@
 .Patient-sign-up .show-password {
     top: 390px;
 }
+
+.Patient-sign-up h2 , input {
+    margin-bottom: 20px;
+}
+
+.Patient-sign-up input[type="password"] {
+    margin-bottom: 20px;
+}

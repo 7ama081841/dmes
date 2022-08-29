@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import {Link} from "react-router-dom"
 
 export default function Home() {
     return (
@@ -10,8 +11,8 @@ export default function Home() {
                         <h1>dmes</h1>
 
                         <div className="buttons">
-                            <button>sign in</button>
-                            <button>sign up</button>
+                            <Link to="Regester">log in</Link>
+                            <Link to="SinUpSinIn">sign up</Link>
                         </div>
                     </div>
                 </div>

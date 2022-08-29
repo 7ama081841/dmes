@@ -26,20 +26,24 @@
     flex-direction: column;
 }
 
-.buttons button {
+.buttons a {
     cursor: pointer;
     font-size: 20px;
     padding: 5px 10px;
     margin: 50px;
     border-radius: 18px;
-    border: none;
-    outline: none;
+    background: #fff;
+    color: black;
+    text-decoration: none;
     transition: 0.5s ease-in-out;
     width: 100px;
     height: 30px;
+    display: inline-block;
+    line-height: 1.2;
+    text-align: center;
 }
 
-.buttons button:hover {
+.buttons a:hover {
     background: rgb(114, 114, 248);
     color: #fff;
 }
