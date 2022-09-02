@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
-import PatientProfile from "./components/patient-profile";
+import DoctorProfile from "./components/doctor-profile";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -10,5 +10,3 @@ root.render(
         <App />
     </React.StrictMode>
 );
-
-// <PatientProfile/>

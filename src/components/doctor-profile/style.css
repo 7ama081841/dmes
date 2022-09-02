@@ -1,0 +1,278 @@
+.doctor-profile {
+    padding-bottom: 30px;
+    background: url("https://www.toomed.com/blog/wp-content/uploads/2019/03/etudiant-sante-medecine.jpg")
+        no-repeat center;
+    background-size: cover;
+    position: relative;
+}
+
+.doctor-profile ul {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    list-style: none;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+}
+
+.doctor-profile ul li {
+    margin-right: 15px;
+    padding-left: 5px;
+    text-transform: capitalize;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* ______________Demande-section__________________ */
+.demande-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 60px 0;
+    color: #fff;
+}
+
+.demande-section > div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 60%;
+}
+
+.doctor-profile .demande-section > div div {
+    padding: 10px;
+    width: 570px;
+}
+
+hr {
+    color: black;
+}
+
+.doctors-names ul,
+.patients-names ul {
+    display: flex;
+    flex-direction: column;
+    background: none;
+}
+
+.doctors-names ul p,
+.doctors-names ul p {
+    display: inline-block;
+    width: 30.333%;
+    margin: auto;
+    justify-content: space-around;
+    padding: 7px;
+    text-transform: capitalize;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+}
+
+.patient-profile button {
+    font-size: 20px;
+    padding: 2px 10px;
+    margin: 10px;
+    border: none;
+    outline: none;
+    border-radius: 27px;
+    cursor: pointer;
+    color: #fff;
+}
+
+button {
+    cursor: pointer;
+}
+
+.doctor-section,
+.patient-section {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 60%;
+    margin: 20px auto;
+}
+
+.patient-section {
+    position: relative;
+}
+
+.search-parent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 0px 2px white;
+    position: relative;
+}
+
+.search-parent > p {
+    color: #fff;
+    margin-left: 50px;
+    font-size: 30px;
+    text-transform: capitalize;
+}
+
+.doctor-profile .search-parent input {
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-left: auto;
+}
+
+.search-parent i {
+    position: absolute;
+    right: 17px;
+}
+
+.doctors-names,
+.patients-names {
+    margin-left: 70px;
+    padding: 10px;
+    max-height: 200px;
+    overflow: auto;
+}
+
+.doctors-names::-webkit-scrollbar,
+.patients-names::-webkit-scrollbar {
+    width: 5px;
+    margin-right: 5px;
+}
+
+.doctors-names::-webkit-scrollbar-track,
+.patients-names::-webkit-scrollbar-track {
+    background: none;
+}
+
+.doctors-names::-webkit-scrollbar-thumb,
+.patients-names::-webkit-scrollbar-thumb {
+    background: rgb(255, 255, 255, 0.5);
+    width: 2px;
+    margin-right: 5px;
+}
+
+.patient-profile input[placeholder="search"] {
+    padding: 5px;
+    margin-right: 50px;
+}
+
+.patient-profile .fa-search {
+    background: #fff;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 52px;
+}
+
+.titre p {
+    width: 30.333%;
+}
+
+.doctor-profile .details {
+    width: 530px;
+    height: 142px;
+    background: #fff;
+    margin: 200px auto;
+    position: absolute;
+    left: 125px;
+    top: -100px;
+}
+
+.doctor-profile .details p {
+    display: inline-block;
+    width: 50%;
+    padding: 10px;
+    color: black;
+}
+
+.doctor-profile .data p {
+    text-align: left;
+}
+
+.doctor-profile .data p:nth-of-type(2) {
+    width: 25%;
+}
+
+.doctor-profile .ajouter {
+    position: absolute;
+    bottom: 18px;
+    left: 53%;
+    transform: translateX(-50px);
+}
+
+.doctor-profile button {
+    padding: 5px 10px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    transition: 0.5s;
+}
+
+.doctor-profile button:hover {
+    color: #fff;
+    background: rgb(114, 114, 248);
+}
+
+.x {
+    width: 20px;
+    height: 20px;
+    background: red;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 1;
+    position: absolute;
+    right: 5px;
+    top: 3px;
+    cursor: pointer;
+}
+
+.doctor-profile form {
+    position: absolute;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    z-index: 5;
+    background: gray;
+    left: 400px;
+    padding: 30px 0;
+}
+
+.doctor-profile form input {
+    display: block;
+}
+
+.doctor-profile .consultation,
+.doctor-profile .ajout {
+    cursor: pointer;
+}
+
+.doctor-profile .none {
+    display: none;
+}
+
+.doctor-profile .info-patient {
+    width: 500px;
+    height: 500px;
+    background: gray;
+    position: absolute;
+    z-index: 5;
+    left: 400px;
+    color: #fff;
+}
+
+
+.doctor-profile .info-patient div {
+    display: flex;
+    padding: 17px 22px;
+}
+.doctor-profile .info-patient .x {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+.doctor-profile .info-patient .ml {
+    margin-left: 40px;
+}

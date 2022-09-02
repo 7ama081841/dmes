@@ -6,6 +6,8 @@ import PatientSigUup from "./components/Patient-sign-up";
 import MédecinSignUp from "./components/Médecin-sign-up";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import PatientProfile from "./components/patient-profile";
+import DoctorProfile from "./components/doctor-profile";
+import ProfileDoctor from "./components/profile-doctor/ProfileDoctor";
 
 function App() {
     return (
@@ -17,17 +19,17 @@ function App() {
                     <Route path="/SinUpSinIn" element={<SinUpSinIn />} />
                     <Route path="/patient" element={<PatientSigUup />} />
                     <Route path="/medecin" element={<MédecinSignUp />} />
-                    <Route path="/PatientProfile" element={<PatientProfile />} />
+                    <Route
+                        path="/PatientProfile"
+                        element={<PatientProfile />}
+                    />
+                    <Route path="/DoctorProfile" element={<DoctorProfile />} />
+                    <Route path="/ProfileDoctor" element={<ProfileDoctor />} />
                 </Routes>
             </BrowserRouter>
         </div>
     );
 }
 
-// <Route path="/Home" element={<Home />} />
-// <PatientSigUup />
-// <MédecinSignUp/>
-// <SinUpSinIn />
-// <Home />
 
 export default App;

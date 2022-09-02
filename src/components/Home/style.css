@@ -26,6 +26,10 @@
     flex-direction: column;
 }
 
+.home .buttons {
+    display: flex;
+}
+
 .buttons a {
     cursor: pointer;
     font-size: 20px;

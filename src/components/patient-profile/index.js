@@ -22,11 +22,21 @@ export default function PatientProfile() {
                 </ul>
             </div>
             <div className="demande-section">
-                <div>
+                <div key="1" >
                     <div>
                         <p>demande d'ajout</p>
                         <p>helmi fakhfékh</p>
-                        <p>123-258-260</p>
+                    </div>
+                    <div>
+                        <button className="refuse">réfuse</button>
+                        <button className="accepte">accepte</button>
+                    </div>
+                </div>
+
+                <div key="2" >
+                    <div>
+                        <p>demande d'ajout</p>
+                        <p>helmi fakhfékh</p>
                     </div>
                     <div>
                         <button className="refuse">réfuse</button>
@@ -34,6 +44,17 @@ export default function PatientProfile() {
                     </div>
                 </div>
                 <hr />
+                <div>
+                    <div>
+                        <p>demande de consultation</p>
+                        <p>zouhair bouchleka</p>
+                        <p>800-230-410</p>
+                    </div>
+                    <div>
+                        <button className="refuse">réfuse</button>
+                        <button className="accepte">accepte</button>
+                    </div>
+                </div>
                 <div>
                     <div>
                         <p>demande de consultation</p>

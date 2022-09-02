@@ -118,6 +118,9 @@ export const patient = [
         gender: "Female",
         adress: "hay zouhour",
         tel: 56159753,
+        num: 1572,
+        num2: 28412,
+        date: "25/7/1990",
     },
     {
         id: 231,
@@ -127,6 +130,9 @@ export const patient = [
         gender: "Female",
         adress: "mornageya",
         tel: 20486259,
+        num: 2865,
+        date: "05/8/1995",
+        num2: 28412,
     },
     {
         id: 232,
@@ -136,6 +142,9 @@ export const patient = [
         gender: "Female",
         adress: "nevza",
         tel: 23597159,
+        num: 1672,
+        date: "26/7/2000",
+        num2: 28412,
     },
     {
         id: 233,
@@ -145,6 +154,9 @@ export const patient = [
         gender: "Genderf,luid",
         adress: "gafsa",
         tel: 21489357,
+        num: 1548,
+        date: "31/10/1998",
+        num2: 28412,
     },
     {
         id: 234,
@@ -154,5 +166,11 @@ export const patient = [
         gender: "Female",
         adress: "tabarka",
         tel: 23657894,
+        date: "30/11/1990",
+        
     },
 ];
+
+export const doctorProfile = []
+
+
