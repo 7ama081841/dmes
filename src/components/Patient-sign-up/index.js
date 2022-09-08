@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
 
 export default function PatientSigUup() {
+    const [nom, setNom] = useState({});
+    const [prenom, setPrenom] = useState({});
+    const [adresse , setAdresse ] = useState({});
+    const [telephone , setTelephone] = useState({});
+    const [groupeSanguin, setGroupeSanguin] = useState({});
+    const [password, setPassword] = useState({});
+
     const handleEye = () => {
         const password = document.querySelector(".password");
         const eye = document.querySelector("i");

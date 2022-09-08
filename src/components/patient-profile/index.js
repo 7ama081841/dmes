@@ -7,8 +7,15 @@ import { Link } from "react-router-dom";
 export default function PatientProfile() {
     const [doc, setDoc] = useState("");
     const [pati, setPati] = useState("");
+    const [detile, setDetile] = useState([]);
 
-    console.log(doc);
+    const showDetals = (object, id) => {
+        setDetile([object]);
+    };
+
+    const deleteDetile = () => {
+        setDetile([]);
+    };
 
     return (
         <div className="patient-profile">
@@ -16,13 +23,12 @@ export default function PatientProfile() {
                 <ul>
                     <li>profile</li>
                     <li>
-                        {" "}
                         <Link to="/">Deconnect</Link>
                     </li>
                 </ul>
             </div>
             <div className="demande-section">
-                <div key="1" >
+                <div key="1">
                     <div>
                         <p>demande d'ajout</p>
                         <p>helmi fakhfékh</p>
@@ -33,7 +39,7 @@ export default function PatientProfile() {
                     </div>
                 </div>
 
-                <div key="2" >
+                <div key="2">
                     <div>
                         <p>demande d'ajout</p>
                         <p>helmi fakhfékh</p>
@@ -122,12 +128,35 @@ export default function PatientProfile() {
                                 patient.first_name.toLowerCase().includes(pati)
                             )
                             .map((patient, key) => (
-                                <li key={key}>
+                                <li
+                                    key={key}
+                                    onClick={() =>
+                                        showDetals(patient, patient.id)
+                                    }
+                                >
                                     <p>{patient.first_name}</p>
                                     <p>{patient.adress}</p>
                                     <p>{patient.tel}</p>
                                 </li>
                             ))}
+                        {detile.map((obj, key) => (
+                            <div key={key} className="details">
+                                <div className="data d1">
+                                    <p>numéro de dossier</p>
+                                    <p>date</p>
+                                </div>
+                                <div className="data">
+                                    <p> {obj.num} </p>
+                                    <p> {obj.date} </p>
+                                    <button>Consult</button>
+                                    <button className="ajouter">ajouter</button>
+                                </div>
+
+                                <div className="x" onClick={deleteDetile}>
+                                    x
+                                </div>
+                            </div>
+                        ))}
                     </ul>
                 </div>
             </div>

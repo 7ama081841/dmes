@@ -24,9 +24,6 @@ export default function DoctorProfile() {
     const [consultation, setConsultation] = useState(null);
 
     const showDetals = (object, id) => {
-        console.log(id);
-        console.log(object);
-
         setDetile([object]);
     };
 
@@ -67,14 +64,11 @@ export default function DoctorProfile() {
             },
         ]);
 
-        form.classList.add("none")
-
+        form.classList.add("none");
     };
 
     const showData = () => {
         const data = document.querySelector(".info-patient");
-
-        console.log(data);
 
         data.classList.remove("none");
         data.classList.remove("flex");

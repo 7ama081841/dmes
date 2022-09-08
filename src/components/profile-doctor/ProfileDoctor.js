@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./profileDoctor.css";
 import { Link } from "react-router-dom";
 import { doctorProfile } from "../../api";
 
 export default function ProfileDoctor() {
-    console.log({ profile: doctorProfile });
+    const [data, setData] = useState(doctorProfile);
+
+    // this is useState for change data
+    const [nom1, seNom1] = useState("");
+    const [prenom1, setPrenom1] = useState("");
+    const [adresseaCbinet1, setAdresseaCbinet1] = useState("");
+    const [telephone1, setTelephone1] = useState("");
+    const [specialite1, setSpecialite1] = useState("");
+    const [nomHopital, setNomHopital] = useState("");
+    const [password1, setPassword1] = useState("");
+
+    // console.log({ profile: doctorProfil  e });
 
     const updateProfile = () => {
         const span = document.querySelectorAll("span");
@@ -14,11 +25,10 @@ export default function ProfileDoctor() {
         const modifier = document.querySelector(".modifier");
 
         span.forEach((el) => (el.className = "none"));
-        console.log(confirmer.classList);
 
-        // annuler.classList.remove("none");
-        // modifier.classList.add("none");
-        // confirmer.classList.remove("none");
+        annuler.classList.remove("none");
+        modifier.classList.add("none");
+        confirmer.classList.remove("none");
 
         input.forEach((input) => (input.className = ""));
     };
@@ -26,19 +36,36 @@ export default function ProfileDoctor() {
     const annulerFunc = () => {
         const span = document.querySelectorAll("span");
         const input = document.querySelectorAll("input");
+
         const annuler = document.querySelector(".annuler");
         const confirmer = document.querySelector(".confirmer");
         const modifier = document.querySelector(".modifier");
 
-        // annuler.className += "none";
-        // confirmer.className += "none";
-        // modifier.className -= "none"
+        annuler.classList.add("none");
+        confirmer.classList.add("none");
+        modifier.classList.remove("none");
 
         span.forEach((el) => (el.className = ""));
         input.forEach((input) => (input.className = "none"));
     };
 
-    const confirmerFunc = () => {};
+    const confirmerFunc = (e) => {
+        e.preventDefault();
+
+        doctorProfile[0].nom = nom1;
+        doctorProfile[0].prenom = prenom1;
+        doctorProfile[0].adresseCabinet = adresseaCbinet1;
+        doctorProfile[0].telephone = telephone1;
+        doctorProfile[0].specialite = specialite1;
+        doctorProfile[0].nomHopital = nomHopital;
+        doctorProfile[0].password = password1;
+
+        annulerFunc();
+
+        setData(data + 1);
+    };
+
+    useEffect(() => {}, [data]);
 
     return (
         <div className="profile-doctor">
@@ -46,39 +73,42 @@ export default function ProfileDoctor() {
                 <div className="container">
                     <ul>
                         <li>
-                            <Link to="/DoctorProfile">back</Link>
+                            <Link to="/DoctorProfile">Dashboard</Link>
                         </li>
                     </ul>
                 </div>
             </nav>
 
             {doctorProfile.map((obj) => (
-                <div className="doctor-info">
+                <div key={obj.id} className="doctor-info">
                     <div>
-                        nom : <span> {obj.nom}</span>
+                        nom : <span> {obj.nom} </span>
                         <input
                             type="text"
                             placeholder="modifier nom"
                             className="none"
-                            value={obj.nom}
+                            defaultValue={obj.nom}
+                            onChange={(e) => seNom1(e.target.value)}
                         />
                     </div>
                     <div>
-                        prénom :<span> {obj.prenom}</span>
+                        prénom :<span> {obj.prenom} </span>
                         <input
                             type="text"
                             placeholder="modifier prénom"
                             className="none"
-                            value={obj.prenom}
+                            defaultValue={obj.prenom}
+                            onChange={(e) => setPrenom1(e.target.value)}
                         />
                     </div>
                     <div>
-                        adresse cabinet :<span>{obj.adresseCabinet}</span>
+                        adresse cabinet :<span>{obj.adresseCabinet} </span>
                         <input
                             type="text"
                             placeholder="modifier adresse cabinet "
                             className="none"
-                            value={obj.adresseCabinet}
+                            defaultValue={obj.adresseCabinet}
+                            onChange={(e) => setAdresseaCbinet1(e.target.value)}
                         />
                     </div>
                     <div>
@@ -87,7 +117,8 @@ export default function ProfileDoctor() {
                             type="text"
                             placeholder="modifier téléphone"
                             className="none"
-                            value={obj.telephone}
+                            defaultValue={obj.telephone}
+                            onChange={(e) => setTelephone1(e.target.value)}
                         />
                     </div>
                     <div>
@@ -96,31 +127,35 @@ export default function ProfileDoctor() {
                             type="text"
                             placeholder="modifier spécialité"
                             className="none"
-                            value={obj.specialite}
+                            defaultValue={obj.specialite}
+                            onChange={(e) => setSpecialite1(e.target.value)}
                         />
                     </div>
                     <div>
-                        nom hôpital :<span> {obj.nomHopital}</span>
+                        nom hôpital : <span>{obj.nomHopital} </span>
                         <input
                             type="text"
                             placeholder="modifier nom hôpital"
                             className="none"
-                            value={obj.nomHopital}
+                            defaultValue={obj.nomHopital}
+                            onChange={(e) => setNomHopital(e.target.value)}
                         />
                     </div>
                     <div>
-                        password :<span> {obj.password}</span>
+                        password : <span>{obj.password} </span>
                         <input
                             type="text"
                             placeholder="modifier password"
                             className="none"
-                            value={obj.password}
+                            defaultValue={obj.password}
+                            onChange={(e) => setPassword1(e.target.value)}
                         />
                     </div>
+
                     <div className="buttons">
                         <button
+                            className=" modifier button"
                             onClick={() => updateProfile()}
-                            className="modifier button "
                         >
                             modifier
                         </button>
@@ -131,7 +166,7 @@ export default function ProfileDoctor() {
                             annuler
                         </button>
                         <button
-                            onClick={() => confirmerFunc()}
+                            onClick={confirmerFunc}
                             className="confirmer none button"
                         >
                             confirmer
@@ -139,82 +174,6 @@ export default function ProfileDoctor() {
                     </div>
                 </div>
             ))}
-
-            <div className="doctor-info">
-                <div>
-                    nom : <span> mohamed</span>
-                    <input
-                        type="text"
-                        placeholder="modifier nom"
-                        className="none"
-                    />
-                </div>
-                <div>
-                    prénom :<span> chaabani</span>
-                    <input
-                        type="text"
-                        placeholder="modifier prénom"
-                        className="none"
-                    />
-                </div>
-                <div>
-                    adresse cabinet :<span>zahrouni</span>
-                    <input
-                        type="text"
-                        placeholder="modifier adresse cabinet "
-                        className="none"
-                    />
-                </div>
-                <div>
-                    téléphone :<span> 58129031</span>
-                    <input
-                        type="text"
-                        placeholder="modifier téléphone"
-                        className="none"
-                    />
-                </div>
-                <div>
-                    spécialité :<span> developper</span>
-                    <input
-                        type="text"
-                        placeholder="modifier spécialité"
-                        className="none"
-                    />
-                </div>
-                <div>
-                    nom hôpital : <span>charnicol</span>
-                    <input
-                        type="text"
-                        placeholder="modifier nom hôpital"
-                        className="none"
-                    />
-                </div>
-                <div>
-                    password : <span>515189254</span>
-                    <input
-                        type="text"
-                        placeholder="modifier password"
-                        className="none"
-                    />
-                </div>
-                <div className="buttons">
-                    <button className="button" onClick={() => updateProfile()}>
-                        modifier
-                    </button>
-                    <button
-                        onClick={() => annulerFunc()}
-                        className="annuler none button"
-                    >
-                        annuler
-                    </button>
-                    <button
-                        onClick={() => confirmerFunc()}
-                        className="confirmer none button"
-                    >
-                        confirmer
-                    </button>
-                </div>
-            </div>
         </div>
     );
 }

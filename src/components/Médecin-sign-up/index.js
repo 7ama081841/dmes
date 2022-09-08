@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { doctorProfile } from "../../api";
 
 export default function MédecinSignUp() {
+    
     const handleEye = () => {
         const password = document.querySelector(".password");
         const eye = document.querySelector("i");
@@ -26,6 +27,23 @@ export default function MédecinSignUp() {
     const [specialite, setSpecialite] = useState({});
     const [nomHopital, setNomHopital] = useState({});
     const [password, setPassword] = useState({});
+
+    const regester = (e) => {
+        e.preventDefault();
+        doctorProfile.push({
+            id: doctorProfile.length + 1,
+            nom,
+            prenom,
+            adresseCabinet,
+            telephone,
+            specialite,
+            nomHopital,
+            password,
+        });
+        console.log(doctorProfile);
+        const r = document.querySelector(".r");
+        r.click();
+    };
 
     return (
         <div className="Médecin-sign-up">
@@ -95,25 +113,7 @@ export default function MédecinSignUp() {
                     </div>
 
                     <Link className="r" to="/DoctorProfile"></Link>
-                    <button
-                        onClick={(e) => {
-                            e.preventDefault();
-                            doctorProfile.push({
-                                id: doctorProfile.length + 1,
-                                nom: nom,
-                                prenom: prenom,
-                                adresseCabinet: adresseCabinet,
-                                telephone: telephone,
-                                specialite: specialite,
-                                nomHopital: nomHopital,
-                                password: password,
-                            });
-                            console.log(doctorProfile);
-                            const r = document.querySelector(".r");
-                            console.log(r)
-                            r.click()
-                        }}
-                    >
+                    <button className="button" onClick={regester}>
                         Regester
                     </button>
 

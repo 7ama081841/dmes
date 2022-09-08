@@ -167,10 +167,11 @@ export const patient = [
         adress: "tabarka",
         tel: 23657894,
         date: "30/11/1990",
-        
+        num: 975825,
     },
 ];
 
 export const doctorProfile = []
 
+export const patientProfile = [];
 

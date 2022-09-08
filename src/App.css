@@ -4,10 +4,10 @@ h1 {
 
 .show-password {
     width: 30px;
-    height: 25px;
+    height: 20px;
     cursor: pointer;
     background: #fff;
     color: black;
     position: absolute;
-    right: 28px;
+    right: 32px;
 }
