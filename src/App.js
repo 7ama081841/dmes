@@ -8,6 +8,7 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import PatientProfile from "./components/patient-profile";
 import DoctorProfile from "./components/doctor-profile";
 import ProfileDoctor from "./components/profile-doctor/ProfileDoctor";
+import ProfilePatient from "./components/profile-patient/ProfilePatient";
 
 function App() {
     return (
@@ -19,6 +20,10 @@ function App() {
                     <Route path="/SinUpSinIn" element={<SinUpSinIn />} />
                     <Route path="/patient" element={<PatientSigUup />} />
                     <Route path="/medecin" element={<MédecinSignUp />} />
+                    <Route
+                        path="/ProfilePatient"
+                        element={<ProfilePatient />}
+                    />
                     <Route
                         path="/PatientProfile"
                         element={<PatientProfile />}

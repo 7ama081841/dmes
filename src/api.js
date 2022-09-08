@@ -121,6 +121,7 @@ export const patient = [
         num: 1572,
         num2: 28412,
         date: "25/7/1990",
+        state: "ajout",
     },
     {
         id: 231,
@@ -133,6 +134,7 @@ export const patient = [
         num: 2865,
         date: "05/8/1995",
         num2: 28412,
+        state: "ajout",
     },
     {
         id: 232,
@@ -145,6 +147,7 @@ export const patient = [
         num: 1672,
         date: "26/7/2000",
         num2: 28412,
+        state: "ajout",
     },
     {
         id: 233,
@@ -157,6 +160,7 @@ export const patient = [
         num: 1548,
         date: "31/10/1998",
         num2: 28412,
+        state: "ajout",
     },
     {
         id: 234,
@@ -168,6 +172,7 @@ export const patient = [
         tel: 23657894,
         date: "30/11/1990",
         num: 975825,
+        state: "ajout",
     },
 ];
 
@@ -175,3 +180,113 @@ export const doctorProfile = []
 
 export const patientProfile = [];
 
+export const patientDossiers = [];
+
+export const patientDossiers2 = [
+    {
+        id: 230,
+        Dossiers: [
+            {
+                nomEtPrenomPatient: "Hank",
+                nomEtPrenomMedecin: "mahdi ben chadya",
+                numeroDossier: 18926,
+                date: "27/3/2005",
+                type: "finsi",
+                raisonVisite: "fhiop",
+                historique: "mphjad",
+                medicaments: "fervex",
+                consultation: "hjjklhg",
+            },
+
+            {
+                nomEtPrenomPatient: "Hank",
+                nomEtPrenomMedecin: "salma kamoun",
+                numeroDossier: 82515,
+                date: "02/05/2015",
+                type: "finsi",
+                raisonVisite: "fhiop",
+                historique: "mphjad",
+                medicaments: "fervex",
+                consultation: "hjjklhg",
+            },
+
+            {
+                nomEtPrenomPatient: "Hank",
+                nomEtPrenomMedecin: "kabil hajji",
+                numeroDossier: 57895,
+                date: "08/12/2010",
+                type: "finsi",
+                raisonVisite: "fhiop",
+                historique: "mphjad",
+                medicaments: "fervex",
+                consultation: "hjjklhg",
+            },
+        ],
+    },
+    {
+        id: 231,
+        Dossiers: [
+            {
+                nomEtPrenomPatient: "Louisa",
+                nomEtPrenomMedecin: "salma kamoun",
+                numeroDossier: 78945,
+                date: "20/3/2015",
+                type: "finsi",
+                raisonVisite: "fhiop",
+                historique: "mphjad",
+                medicaments: "aspegic",
+                consultation: "hjjklhg",
+            },
+        ],
+    },
+    {
+        id: 232,
+        Dossiers: [
+            {
+                nomEtPrenomPatient: "Grantham",
+                nomEtPrenomMedecin: "kabil hajji",
+                numeroDossier: 39545,
+                date: "30/7/2020",
+                type: "finsi",
+                raisonVisite: "fhiop",
+                historique: "mphjad",
+                medicaments: "fervex",
+                consultation: "hjjklhg",
+            },
+        ],
+    },
+    {
+        id: 233,
+        Dossiers: [
+            {
+                nomEtPrenomPatient: "Christal",
+                nomEtPrenomMedecin: "mohsen nefsi",
+                numeroDossier: 17954,
+                date: "30/12/1980",
+                type: "finsi",
+                raisonVisite: "fhiop",
+                historique: "mphjad",
+                medicaments: "fervex",
+                consultation: "hjjklhg",
+            },
+        ],
+    },
+    {
+        id: 234,
+        Dossiers: [
+            {
+                nomEtPrenomPatient: "Cristine",
+                nomEtPrenomMedecin: "hamida welmi",
+                numeroDossier: 69841,
+                date: "1/6/2013",
+                type: "finsi",
+                raisonVisite: "fhiop",
+                historique: "mphjad",
+                medicaments: "fervex",
+                consultation: "hjjklhg",
+            },
+        ],
+    },
+];
+
+export const patients = [];

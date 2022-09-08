@@ -43,6 +43,7 @@ export default function MédecinSignUp() {
         console.log(doctorProfile);
         const r = document.querySelector(".r");
         r.click();
+        console.log(doctorProfile);
     };
 
     return (

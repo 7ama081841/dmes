@@ -1,17 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./style.css";
 import { doctors } from "../../api";
 import { patient } from "../../api";
 import { Link } from "react-router-dom";
-// import { dosye } from "../../api";
+import { patientDossiers } from "../../api";
 
 export default function DoctorProfile() {
     const [doc, setDoc] = useState("");
     const [pati, setPati] = useState("");
     const [detile, setDetile] = useState([]);
-
-    const [donnees, setDonnees] = useState([]);
-    // const [dosyes, setDosyes] = useState([]);
+    const [findId, setFindId] = useState();
 
     const [nomEtPrenomPatient, setNomEtPrenomPatient] = useState(null);
     const [nomEtPrenomMedecin, setNomEtPrenomMedecin] = useState(null);
@@ -22,6 +20,8 @@ export default function DoctorProfile() {
     const [historique, setHistorique] = useState(null);
     const [medicaments, setMedicaments] = useState(null);
     const [consultation, setConsultation] = useState(null);
+    const [idParent, setIdParent] = useState(null);
+    const [rerender, setRerender] = useState(null);
 
     const showDetals = (object, id) => {
         setDetile([object]);
@@ -31,10 +31,12 @@ export default function DoctorProfile() {
         setDetile([]);
     };
 
-    const showForm = () => {
+    const showForm = (id) => {
         const form = document.querySelector("form");
 
         form.classList.remove("none");
+
+        setIdParent(id);
     };
 
     const hideForm = () => {
@@ -43,11 +45,12 @@ export default function DoctorProfile() {
         form.classList.add("none");
     };
 
-    const ajouterPatient = (e) => {
+    const ajouterPatient = () => {
         const form = document.querySelector("form");
-        setDonnees([
+
+        patientDossiers.push([
             {
-                id: Math.random(),
+                id: idParent,
                 dos: [
                     {
                         nomEtPrenomPatient,
@@ -64,10 +67,25 @@ export default function DoctorProfile() {
             },
         ]);
 
+        patient.filter((obj) => obj.id === idParent)[0].state = "consultation";
+
+        setRerender(rerender + 1);
+
+        console.log(patientDossiers);
+
+        // patientDossiers.map( object => object.map( obj => obj.dos.map( obj => ( <div></div> ))))
+
         form.classList.add("none");
     };
 
-    const showData = () => {
+    useEffect(() => {}, [rerender]);
+
+    const showData = (id) => {
+
+        setFindId(id);
+
+        setRerender(rerender - 1);
+
         const data = document.querySelector(".info-patient");
 
         data.classList.remove("none");
@@ -155,55 +173,63 @@ export default function DoctorProfile() {
                 </div>
             </form>
 
-            {donnees.map((object) =>
-                object.dos.map((el, key) => (
-                    <div key={key} className=" info-patient none">
-                        <div onClick={hideData} className="x">
-                            x
-                        </div>
+            {patientDossiers.map((obj) =>
+                obj
+                    .filter((el) => el.id === findId)
+                    .map((obj) =>
+                        obj.dos.map((el, key) => (
+                            <div key={key} className="info-patient none">
+                                <div onClick={hideData} className="x">
+                                    x
+                                </div>
 
-                        <div>
-                            <p>nom et prénom patient :</p>
-                            <p className="ml">{el.nomEtPrenomPatient}</p>
-                        </div>
+                                <div>
+                                    <p>nom et prénom patient :</p>
+                                    <p className="ml">
+                                        {el.nomEtPrenomPatient}
+                                    </p>
+                                </div>
 
-                        <div>
-                            <p>nom et prénom médecin :</p>
-                            <p className="ml">{el.nomEtPrenomMedecin}</p>
-                        </div>
+                                <div>
+                                    <p>nom et prénom médecin :</p>
+                                    <p className="ml">
+                                        {el.nomEtPrenomMedecin}
+                                    </p>
+                                </div>
 
-                        <div>
-                            <p>numéro dossier : </p>
-                            <p className="ml">{el.numeroDossier}</p>
-                        </div>
+                                <div>
+                                    <p>numéro dossier : </p>
+                                    <p className="ml">{el.numeroDossier}</p>
+                                </div>
 
-                        <div>
-                            <p>date : </p>
-                            <p className="ml">{el.date}</p>
-                        </div>
+                                <div>
+                                    <p>date : </p>
+                                    <p className="ml">{el.date}</p>
+                                </div>
 
-                        <div>
-                            <p>type : </p>
-                            <p className="ml">{el.type}</p>
-                        </div>
-                        <div>
-                            <p>raison visite : </p>
-                            <p className="ml">{el.raisonVisite}</p>
-                        </div>
-                        <div>
-                            <p>Historique : </p>
-                            <p className="ml">{el.historique}</p>
-                        </div>
-                        <div>
-                            <p>médicaments : </p>
-                            <p className="ml">{el.medicaments}</p>
-                        </div>
-                        <div>
-                            <p>consultation : </p>
-                            <p className="ml">{el.consultation}</p>
-                        </div>
-                    </div>
-                ))
+                                <div>
+                                    <p>type : </p>
+                                    <p className="ml">{el.type}</p>
+                                </div>
+                                <div>
+                                    <p>raison visite : </p>
+                                    <p className="ml">{el.raisonVisite}</p>
+                                </div>
+                                <div>
+                                    <p>Historique : </p>
+                                    <p className="ml">{el.historique}</p>
+                                </div>
+                                <div>
+                                    <p>médicaments : </p>
+                                    <p className="ml">{el.medicaments}</p>
+                                </div>
+                                <div>
+                                    <p>consultation : </p>
+                                    <p className="ml">{el.consultation}</p>
+                                </div>
+                            </div>
+                        ))
+                    )
             )}
 
             <div className="demande-section">
@@ -214,29 +240,44 @@ export default function DoctorProfile() {
                         <p>Etat</p>
                     </div>
                 </div>
-                <div>
-                    <div>
-                        <div className="titre info">
-                            <p className="ajout" onClick={showForm}>
-                                ajout
-                            </p>
-                            <p>safe selmi</p>
-                            <p>accepté</p>
+
+                {patient
+                    .filter((doctor) => doctor.state.includes("ajout"))
+                    .map((patient) => (
+                        <div key={patient.id}>
+                            <div>
+                                <div className="titre info">
+                                    <p
+                                        className="ajout"
+                                        onClick={() => showForm(patient.id)}
+                                    >
+                                        ajout
+                                    </p>
+                                    <p> {patient.first_name} </p>
+                                    <p>accepté</p>
+                                </div>
+                            </div>
                         </div>
-                        <div className="titre">
-                            <p className="consultation" onClick={showData}>
-                                consultation
-                            </p>
-                            <p>ahmed hafez</p>
-                            <p>réfusé</p>
+                    ))}
+
+                {patient
+                    .filter((doctor) => doctor.state.includes("consultation"))
+                    .map((patient) => (
+                        <div key={patient.id} className="position">
+                            <div>
+                                <div className="titre info">
+                                    <p
+                                        className="consultation"
+                                        onClick={() => showData(patient.id)}
+                                    >
+                                        consultation
+                                    </p>
+                                    <p> {patient.first_name} </p>
+                                    <p>accepté</p>
+                                </div>
+                            </div>
                         </div>
-                        <div className="titre">
-                            <p>consultation</p>
-                            <p>nourhen slema</p>
-                            <p>on attend</p>
-                        </div>
-                    </div>
-                </div>
+                    ))}
             </div>
 
             <div className="doctor-section">
@@ -329,3 +370,5 @@ export default function DoctorProfile() {
         </div>
     );
 }
+
+  

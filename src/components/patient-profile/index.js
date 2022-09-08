@@ -21,14 +21,16 @@ export default function PatientProfile() {
         <div className="patient-profile">
             <div className="nav">
                 <ul>
-                    <li>profile</li>
+                    <li>
+                        <Link to="/ProfilePatient">profile</Link>
+                    </li>
                     <li>
                         <Link to="/">Deconnect</Link>
                     </li>
                 </ul>
             </div>
             <div className="demande-section">
-                <div key="1">
+                <div>
                     <div>
                         <p>demande d'ajout</p>
                         <p>helmi fakhfékh</p>
@@ -39,7 +41,7 @@ export default function PatientProfile() {
                     </div>
                 </div>
 
-                <div key="2">
+                <div >
                     <div>
                         <p>demande d'ajout</p>
                         <p>helmi fakhfékh</p>
@@ -94,9 +96,9 @@ export default function PatientProfile() {
                             .filter((doctor) =>
                                 doctor.first_name.toLowerCase().includes(doc)
                             )
-                            .map((doctor, key) => (
+                            .map((doctor) => (
                                 <div>
-                                    <div className="" key={key}>
+                                    <div className="" key={doctor.id}>
                                         <p>{doctor.first_name}</p>
                                         <p>{doctor.adress}</p>
                                         <p>{doctor.tel}</p>
@@ -127,9 +129,9 @@ export default function PatientProfile() {
                             .filter((patient) =>
                                 patient.first_name.toLowerCase().includes(pati)
                             )
-                            .map((patient, key) => (
+                            .map((patient) => (
                                 <li
-                                    key={key}
+                                    key={patient.id}
                                     onClick={() =>
                                         showDetals(patient, patient.id)
                                     }
@@ -138,9 +140,9 @@ export default function PatientProfile() {
                                     <p>{patient.adress}</p>
                                     <p>{patient.tel}</p>
                                 </li>
-                            ))}
-                        {detile.map((obj, key) => (
-                            <div key={key} className="details">
+                            ))} 
+                        {detile.map((obj) => (
+                            <div key={obj.id} className="details">
                                 <div className="data d1">
                                     <p>numéro de dossier</p>
                                     <p>date</p>

@@ -1,0 +1,226 @@
+.profile-patient {
+    background: url("https://www.toomed.com/blog/wp-content/uploads/2019/03/etudiant-sante-medecine.jpg")
+        no-repeat center;
+    background-size: cover;
+    padding-bottom: 100px;
+}
+
+.profile-patient nav {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+}
+
+.profile-patient nav li {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.profile-patient ul {
+    width: 100%;
+}
+
+.profile-patient .patients-names li {
+    cursor: auto;
+}
+
+.profile-patient  li {
+    list-style: none;
+    font-size: 30px;
+    margin-left: auto;
+    width: 50px;
+}
+
+.profile-patient .patients-names ul p,
+.doctors-names ul p {
+    width: 31.333%;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.profile-patient .doctor-info {
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    width: 500px;
+    margin: 25px auto;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.profile-patient .doctor-info div {
+    padding: 10px;
+    /* margin: 20px 0px; */
+}
+
+.profile-patient .search-parent {
+    padding: 10px 0;
+    justify-content: center;
+}
+
+.profile-patient .titre {
+    color: #fff;
+    margin-left: 70px;
+    text-align: center;
+    padding: 10px 0;
+    padding-bottom: 0px;
+    font-size: 20px;
+}
+
+
+.profile-patient .buttons {
+    text-align: center;
+}
+
+.profile-patient .button {
+    cursor: pointer;
+    font-size: 20px;
+    padding: 5px 10px;
+    margin: 10px;
+    border-radius: 18px;
+    background: #fff;
+    color: black;
+    text-decoration: none;
+    transition: 0.5s ease-in-out;
+    width: 100px;
+    height: 30px;
+    display: inline-block;
+    line-height: 1.2;
+    text-align: center;
+    border: none;
+    line-height: 1;
+}
+
+.profile-patient .button:hover {
+    background: rgb(114, 114, 248);
+    color: #fff;
+}
+
+.profile-patient .none {
+    display: none;
+}
+
+.doctor-info input {
+    margin: 0;
+}
+
+.profile-patient li {
+    width: 100%;
+    cursor: pointer;
+}
+
+.details {
+    width: 530px;
+    height: 142px;
+    background: #fff;
+    margin: 200px auto;
+    position: absolute;
+    left: 125px;
+    top: -100px;
+}
+
+.profile-patient .details .data p {
+    display: inline-block;
+    width: 50%;
+    padding: 10px;
+    color: black;
+    text-align: left;
+}
+
+.data p {
+    text-align: left;
+}
+
+.profile-patient .details data p {
+    width: 47.333%;
+}
+
+.details .data p:nth-of-type(2) {
+    width: 21.333%;
+}
+
+.details .ajouter {
+    position: absolute;
+    bottom: 0px;
+    left: 53%;
+    transform: translateX(-50px);
+}
+
+button {
+    padding: 5px 10px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    transition: 0.5s;
+}
+
+button:hover {
+    color: #fff;
+    background: rgb(114, 114, 248);
+}
+
+.x {
+    width: 20px;
+    height: 20px;
+    background: red;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 1;
+    position: absolute;
+    right: 5px;
+    top: 3px;
+    cursor: pointer;
+}
+
+.none {
+    display: none;
+}
+
+.profile-patient .info-patient {
+    width: 751px;
+    height: 500px;
+    background: gray;
+    position: absolute;
+    z-index: 5;
+    left: 33px;
+    top: -100px;
+    color: #fff;
+    overflow: auto;
+}
+
+.profile-patient .info-patient::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 10px;
+    color: b;
+}
+
+.profile-patient .info-patient::-webkit-scrollbar-track {
+    background: none;
+}
+
+.profile-patient .info-patient::-webkit-scrollbar-thumb {
+    background: rgb(192, 191, 191);
+}
+
+.profile-patient .info-patient div {
+    padding: 17px 22px;
+    display: flex;
+}
+
+.profile-patient .info-patient p {
+    text-align: left;
+}
+
+.profile-patient .info-patient .x {
+    display: flex;
+    justify-content: center;
+    padding: 2px;
+}
+
+.profile-patient .info-patient .ml {
+    margin-left: 40px;
+}

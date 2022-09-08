@@ -19,3 +19,7 @@
 .Patient-sign-up input[type="password"] {
     margin-bottom: 20px;
 }
+
+.Patient-sign-up form {
+    padding: 20px 0;
+}
