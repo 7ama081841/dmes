@@ -41,7 +41,7 @@ export default function PatientProfile() {
                     </div>
                 </div>
 
-                <div >
+                <div>
                     <div>
                         <p>demande d'ajout</p>
                         <p>helmi fakhfékh</p>
@@ -98,7 +98,9 @@ export default function PatientProfile() {
                             )
                             .map((doctor) => (
                                 <div>
-                                    <div className="" key={doctor.id}>
+                                    <div
+                                        key={doctor.id}
+                                    >
                                         <p>{doctor.first_name}</p>
                                         <p>{doctor.adress}</p>
                                         <p>{doctor.tel}</p>
@@ -140,7 +142,7 @@ export default function PatientProfile() {
                                     <p>{patient.adress}</p>
                                     <p>{patient.tel}</p>
                                 </li>
-                            ))} 
+                            ))}
                         {detile.map((obj) => (
                             <div key={obj.id} className="details">
                                 <div className="data d1">

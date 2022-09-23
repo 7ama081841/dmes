@@ -242,6 +242,7 @@ button {
 
 .doctor-profile form input {
     display: block;
+
 }
 
 .doctor-profile .consultation,
@@ -271,7 +272,7 @@ button {
 .doctor-profile .info-patient .x {
     display: flex;
     justify-content: center;
-    padding: 10px;
+    padding: 5px;
 }
 .doctor-profile .info-patient .ml {
     margin-left: 40px;

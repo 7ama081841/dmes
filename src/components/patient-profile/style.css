@@ -5,17 +5,17 @@
     background-size: cover;
 }
 
-.patient-profile ul{
+.patient-profile ul {
     display: flex;
     justify-content: flex-end;
     padding: 20px;
     list-style: none;
-    background-color: rgba(0, 0, 0, .7);
+    background-color: rgba(0, 0, 0, 0.7);
     color: #fff;
 }
-.patient-profile ul li{
+.patient-profile ul li {
     margin-right: 15px;
-    padding-left: 5px ;
+    padding-left: 5px;
     text-transform: capitalize;
     font-size: 20px;
     font-weight: 600;
@@ -23,7 +23,7 @@
 }
 
 /* ______________Demande-section__________________ */
-.demande-section{
+.demande-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -32,31 +32,31 @@
     color: #fff;
 }
 
-.demande-section > div{
+.demande-section > div {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color:rgba(0, 0, 0, .7);
+    background-color: rgba(0, 0, 0, 0.7);
     width: 60%;
 }
 
-.demande-section > div div{
+.demande-section > div div {
     padding: 10px;
     width: 235px;
 }
 
-hr{
-    color: black ;
+hr {
+    color: black;
 }
 
-.doctors-names ul ,
+.doctors-names ul,
 .patients-names ul {
     display: flex;
     flex-direction: column;
     background: none;
 }
 
-.patients-names ul p , 
+.patients-names ul p,
 .doctors-names ul p {
     display: inline-block;
     width: 30.333%;
@@ -70,6 +70,10 @@ hr{
     text-align: center;
 }
 
+.patient-profile .doctors-names ul p {
+    width: 30.333%;
+}
+
 .patient-profile button {
     font-size: 20px;
     padding: 2px 10px;
@@ -81,23 +85,23 @@ hr{
     color: #fff;
 }
 
-.patient-profile .refuse{
+.patient-profile .refuse {
     background-color: #dc3e4e;
 }
 
-.patient-profile .accepte{
+.patient-profile .accepte {
     background-color: #2ba948;
 }
 
 /* ----------------------------------------- */
 .doctor-section,
-.patient-section{
-    background-color: rgba(0, 0, 0, .7);
+.patient-section {
+    background-color: rgba(0, 0, 0, 0.7);
     width: 60%;
     margin: 20px auto;
 }
 
-.search-parent{
+.search-parent {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -112,33 +116,33 @@ hr{
     text-transform: capitalize;
 }
 
-.search-parent input{
+.search-parent input {
     margin-top: 20px;
     margin-right: 10px;
 }
 
 .doctors-names,
-.patients-names{
+.patients-names {
     margin-left: 70px;
     padding: 10px;
     max-height: 200px;
     overflow: auto;
 }
 
-.doctors-names::-webkit-scrollbar ,
+.doctors-names::-webkit-scrollbar,
 .patients-names::-webkit-scrollbar {
     width: 5px;
     margin-right: 5px;
 }
 
-.doctors-names::-webkit-scrollbar-track ,
+.doctors-names::-webkit-scrollbar-track,
 .patients-names::-webkit-scrollbar-track {
     background: none;
 }
 
-.doctors-names::-webkit-scrollbar-thumb  ,
-.patients-names::-webkit-scrollbar-thumb  {
-    background: rgb(255, 255, 255 , .5);
+.doctors-names::-webkit-scrollbar-thumb,
+.patients-names::-webkit-scrollbar-thumb {
+    background: rgb(255, 255, 255, 0.5);
     width: 2px;
     margin-right: 5px;
 }
@@ -163,7 +167,6 @@ hr{
     display: flex;
     justify-content: space-around;
 }
-
 
 .patient-profile .details {
     width: 530px;
